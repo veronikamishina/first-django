@@ -1,4 +1,10 @@
 from django.http import HttpResponse
 
-def hello_page(request):
-    return HttpResponse("<h1>Hello, world!</h1>")
+def main_page(request):
+    return HttpResponse("main page")
+
+def about(request):
+    return HttpResponse("about")
+
+def post(request):
+    return HttpResponse("post")
