@@ -1,10 +1,19 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+MENU = {"Main page": "/", "About Us": "/about", "Posts": "/post"}
 
 def main_page(request):
-    return HttpResponse("main page")
+    title = "Main page"
+    data = {"menu": MENU, "title": title}
+    return render(request, "./index.html", context=data)
 
-def about(request):
-    return HttpResponse("about")
+def about_page(request):
+    title = "About Us"
+    data = {"menu": MENU, "title": title}
+    return render(request, "./about.html", context=data)
 
-def post(request):
-    return HttpResponse("post")
+def post_page(request):
+    title = "Posts"
+    data = {"menu": MENU, "title": title}
+    return render(request, "./post.html", context=data)
