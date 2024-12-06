@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<a href="/reviews/add_comment">Add review</a>
+{% for el in notes %}
+{% if el.verified == True %}
+<div class="pole" style="padding: 0 1vw; background-color: lightgrey">
+    <h2>{{el.name}}</h2>
+    <h3>{{el.email}}</h3>
+    <p>{{el.revtext}}</p>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

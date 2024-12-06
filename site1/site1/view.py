@@ -1,7 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
-MENU = {"Main page": "/", "About Us": "/about", "Posts": "/post"}
+MENU = {"Main page": "/", "About Us": "/about", "Posts": "/post", "Reviews": "/reviews"}
 
 def main_page(request):
     title = "Main page"
@@ -13,7 +12,9 @@ def about_page(request):
     data = {"menu": MENU, "title": title}
     return render(request, "./about.html", context=data)
 
-def post_page(request):
+def post_page(request, id=1):
+    resp = f'Post {id}'
     title = "Posts"
-    data = {"menu": MENU, "title": title}
+    data = {"menu": MENU, "title": title, "id": id, "resp": resp}
     return render(request, "./post.html", context=data)
+

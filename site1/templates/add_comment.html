@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form action="{% url 'thanks_page' %}" method="POST">
+  {% csrf_token %}
+  <label for="name"></label>
+  <input required type="text" placeholder="Your name" name="name" id="name" maxlength="40" style="font-size: 20px; font-family: Arial; width: 250px; height: 40px; line-height: 30px">
+  <br><br>
+  <label for="email"></label>
+  <input required type="text" placeholder="Your e-mail" name="email" id="email" maxlength="40" style="font-size: 20px; font-family: Arial; width: 250px; height: 40px; line-height: 30px">
+  <br><br>
+  <label for="revtext"></label>
+  <textarea required type="text" placeholder="Your review" name="revtext" id="revtext" maxlength="300" style="font-size: 20px; font-family: Arial; width: 250px; height: 250px; line-height: 30px"></textarea>
+  <br><br>
+  <button type="submit" style="font-size: 20px; font-family: Arial; width: 250px; height: 40px; line-height: 30px">SEND</button>
+</form>
+
+{% endblock %}

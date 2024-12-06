@@ -22,13 +22,14 @@
    grid-column: 1/2;
    font-family: Arial, sans-serif;
    line-height: 150%;
-   font-size: 120%;
 }
 
 .content {
    grid-row: 2/4;
    grid-column: 2/4;
    font-family: Arial, sans-serif;
+   box-sizing: border-box;
+   overflow: auto;
 }
 
 .footer{
